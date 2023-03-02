@@ -19,8 +19,9 @@ public class ObjectToJsonConverter implements Converter<JsonObject, Json> {
     public Json convert(JsonObject source) {
         try {
             String json = gson.toJson(source);
-            System.out.println("WritingConverter working..");
-            return Json.of(json);
+            Json result = Json.of(json);
+            System.out.println("WritingConverter working.. " + Json.of(json));
+            return result;
         } catch (Exception ex) {
             throw new RuntimeException("Error converting object to Json: " + ex.getMessage(), ex);
         }

@@ -17,8 +17,9 @@ public class JsonToObjectConverter implements Converter<Json, JsonObject> {
     @Override
     public JsonObject convert(Json source) {
         try {
-            System.out.println("ReadingConverter working..");
-            return gson.fromJson(source.asString(), JsonObject.class);
+            JsonObject result = gson.fromJson(source.asString(), JsonObject.class);
+            System.out.println("ReadingConverter working.. " + result);
+            return result;
         } catch (Exception ex) {
             throw new RuntimeException("Error converting Json to object: " + ex.getMessage(), ex);
         }
