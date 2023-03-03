@@ -6,7 +6,7 @@ import io.r2dbc.postgresql.codec.Json;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.ReadingConverter;
 
-@ReadingConverter()
+@ReadingConverter
 public class JsonToObjectConverter implements Converter<Json, JsonObject> {
 
     private final Gson gson;

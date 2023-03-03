@@ -1,7 +1,7 @@
 package com.example.demojson.config;
 
 import com.example.demojson.converter.JsonToObjectConverter;
-import com.example.demojson.converter.ObjectToJsonConverter;
+import com.example.demojson.converter.SomeEntityToRow;
 import com.google.gson.Gson;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ public class R2dbcConfig {
     public R2dbcCustomConversions r2dbcCustomConversions(Gson gson) {
         List<Converter<?, ?>> converters = new ArrayList<>();
         converters.add(new JsonToObjectConverter(gson));
-        converters.add(new ObjectToJsonConverter(gson));
+        converters.add(new SomeEntityToRow(gson));
         return new R2dbcCustomConversions(R2dbcCustomConversions.STORE_CONVERSIONS, converters);
     }
 }
