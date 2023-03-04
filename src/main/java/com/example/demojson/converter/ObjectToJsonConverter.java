@@ -11,8 +11,8 @@ public class ObjectToJsonConverter implements Converter<JsonObject, Json> {
 
     private final Gson gson;
 
-    public ObjectToJsonConverter(Gson mapper) {
-        this.gson = mapper;
+    public ObjectToJsonConverter(Gson gson) {
+        this.gson = gson;
     }
 
     @Override
